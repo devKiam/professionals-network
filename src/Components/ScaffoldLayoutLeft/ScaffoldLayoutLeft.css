@@ -1,0 +1,53 @@
+.profile-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    /*border: 1px dashed black;*/
+}
+
+.person-bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.person-img {
+    border-radius: 50%;
+    width: 72px;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.user-bio {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+}
+
+
+
+
+.connection {
+    display: flex;
+    flex-direction: column;
+}
+.connection-numbers {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    font-weight: 600;
+}
+.numbers-of-connections {
+    color : rgb(10, 102, 194);
+    font-size: 12px;
+    font-weight: 600;
+
+}
+.grow-network-text {
+    font-size: 12px;
+    font-weight: 600;
+}

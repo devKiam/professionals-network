@@ -1,0 +1,41 @@
+.right-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+.header-right-section {
+    margin-bottom: 24px;
+}
+.title-right-section {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.9);
+}
+
+.img-right-section {
+    border-radius: 50%;
+    width: 48px;
+}
+
+.data-follow {
+    margin-left: 8px;
+}
+.title-follow {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.9);
+}
+.bio-follow {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+}
+.follow-button-right-section {
+    border-radius: 16px;
+    border-color: rgba(0,0,0,0.6);
+    font-size: 16px;
+    font-weight: 600;
+    max-height: 32px;
+    min-width: 0;
+    margin-top: 6px;
+}

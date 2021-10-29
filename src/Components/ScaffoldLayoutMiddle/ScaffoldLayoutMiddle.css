@@ -1,0 +1,114 @@
+/*---------------------
+post section
+------------------*/
+.post {
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 16px;
+}
+
+.person-img-post-section {
+    border-radius: 50%;
+    height: 48px;
+}
+
+.start-a-post {
+    border-radius: 35px;
+    background-color: transparent;
+    border: 1px solid grey;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+    min-height: 48px;
+    width: 100%;
+    text-align: start;
+    margin: 8px;
+}
+
+
+.modal-post {
+    border-radius: 8px;
+    border: none;
+}
+
+.user-name-modal {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-left: 8px;
+}
+
+.post-input {
+    height: 100%;
+    width: 100%;
+    margin-top: 8px;
+    border: none;
+    outline: none;
+}
+
+.modal-footer button {
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 68px;
+    max-width: 480px;
+}
+/*---------------------
+post section
+------------------*/
+
+.horizontal-line-scaffold-layout-middle {
+    width: 100%;
+    text-align: end;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    line-height: 0.1em;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: grey;
+    margin: 16px 0 16px 0;
+}
+
+.hr-timeline-text {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 0 0 16px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/*---------------------
+timeline section
+------------------*/
+.timeline-card {
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 16px;
+    margin-bottom: 8px;
+}
+.person-img-timeline-card {
+    border-radius: 50%;
+    width: 48px;
+}
+.title-timeline-card {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.followers-text {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+}
+
+.body-timeline-card {
+    margin-top: 8px;
+}
+.body-text-timeline {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.9);
+}
+.body-img-timeline {
+    width: 100%;
+}
+/*---------------------
+timeline section
+------------------*/
