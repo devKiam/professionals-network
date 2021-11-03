@@ -15,7 +15,10 @@ const ScaffoldLayoutMiddle = () => {
                     </button>
                     {/*Button Triggered Modal*/}
 
-                    {/*Modal*/}
+
+                    {/*----------------------------------
+                    Most for Post (starts)
+                    -------------------------------------*/}
                     <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div className="modal-dialog">
                             <div className="modal-post modal-content">
@@ -32,14 +35,17 @@ const ScaffoldLayoutMiddle = () => {
                                         <textarea className='post-input' placeholder='What do you want to talk about?'/>
                                     </div>
                                 </div>
-                                <div className="modal-footer">
+                                <div className="modal-post-footer modal-footer">
                                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                     <button type="button" className="btn btn-primary">Post</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {/*Modal*/}
+                    {/*-------------------------------
+                    Most for Post (ends)
+                    ---------------------------------*/}
+
 
                 </div>
             </section>

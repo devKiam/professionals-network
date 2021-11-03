@@ -1,9 +1,27 @@
-import React, {Fragment} from 'react';
-import {NavLink} from "react-router-dom";
+import React, {Fragment, useContext, useEffect} from 'react';
+import {Link, NavLink, useHistory} from "react-router-dom";
 import './Header.css'
+import {AuthContext} from "../../context/AuthProvider";
 
 
 const Header = () => {
+
+    const {user, LogOut} = useContext(AuthContext)
+
+    
+    // route to sign-in if logout
+    const history = useHistory()
+
+    function routeToSignIn() {
+        if (!user.email) {
+            history.push('/sign-in')
+            console.log(user.email)
+        }
+    }
+    routeToSignIn();
+    // route to sign-in if logout
+
+
     return (
         <Fragment>
             <nav className="nav-container navbar navbar-expand-lg navbar-light container-fluid sticky-top">
@@ -49,8 +67,16 @@ const Header = () => {
                                 <p className='icon-title'>Notifications</p>
                             </li>
                             <li>
-                                <i className="fas fa-user-circle fa-lg"/>
-                                <p className='icon-title'>Me</p>
+                                <div className="dropdown d-flex flex-column justify-content-center align-items-center">
+                                    <i className="fas fa-user-circle fa-lg" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"/>
+                                    <p className='icon-title'>Me</p>
+
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a className="dropdown-item" href="#">Action</a></li>
+                                        <li><a className="dropdown-item" href="#">Another action</a></li>
+                                        <li><Link className="dropdown-item" to='/sign-in' onClick={LogOut}>Logout</Link></li>
+                                    </ul>
+                                </div>
                             </li>
 
                         </ul>

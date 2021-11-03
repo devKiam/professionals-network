@@ -93,3 +93,29 @@
 .sign-in-text a{
     text-decoration: none;
 }
+
+/*------------------
+modal for validation mail (start)
+-----------------------------------*/
+.modal-content {
+    border-radius: 8px;
+    padding: 16px;
+    border: none;
+}
+.modal-title-validation {
+    font-size: 32px;
+    font-weight: 600;
+}
+.body-modal-validation-mail {
+    font-weight: 400;
+    font-size: 14px;
+}
+.okay-button-modal-email-validation {
+    background-color: rgb(10, 102, 194);
+    width: 100%;
+    height: 52px;
+    border-radius: 28px;
+}
+.okay-button-modal-email-validation:hover {
+    background-color: #383c75;
+}

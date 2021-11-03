@@ -26,6 +26,7 @@ post section
 }
 
 
+/*Most for Post (starts)*/
 .modal-post {
     border-radius: 8px;
     border: none;
@@ -46,16 +47,19 @@ post section
     outline: none;
 }
 
-.modal-footer button {
-    border-radius: 16px;
+.modal-post-footer button {
+    border-radius: 28px;
     font-size: 16px;
     font-weight: 600;
     min-width: 68px;
     max-width: 480px;
 }
+/*Most for Post (ends)*/
+
 /*---------------------
 post section
 ------------------*/
+
 
 .horizontal-line-scaffold-layout-middle {
     width: 100%;

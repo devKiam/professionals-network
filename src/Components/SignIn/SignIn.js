@@ -1,18 +1,22 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useContext, useEffect, useState} from 'react';
 import './SIgnIn.css'
 import initializeAuthentication from "../../Firebase/firebase.initialize";
 import {getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, sendPasswordResetEmail} from "firebase/auth";
 import FooterPrimary from "../FooterPrimary/FooterPrimary";
+import {Link, useHistory} from "react-router-dom";
+import useFirebase from "../../hooks/useFirebase";
+import {AuthContext} from "../../context/AuthProvider";
 
 
 // Initialize Firebase
 initializeAuthentication();
 
-// SignIn with Google
-const provider = new GoogleAuthProvider();
-
 
 const SignIn = () => {
+
+    // const {GoogleSignIn} = useFirebase()    // custom hook
+    const {user, GoogleSignIn} = useContext(AuthContext)
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordResetEmail, setPasswordResetEmail] = useState('')
@@ -21,14 +25,16 @@ const SignIn = () => {
     const auth = getAuth();
 
 
-    function handleGoogleSignIn() {
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                // The signed-in user info.
-                const user = result.user;
-                console.log(user)
-            })
+    // redirect to feed component if user is logged in
+    const history = useHistory()
+
+    function redirectToFeed() {
+        if (user?.email) {
+            history.push('/feed')
+        }
     }
+    redirectToFeed();
+    // redirect to feed component if user is logged in
 
 
     function handlePasswordSignIn(event) {
@@ -120,13 +126,14 @@ const SignIn = () => {
                                         </div>
                                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
                                     </div>
-                                    <form  className="modal-body d-flex flex-column">
+                                    <form className="modal-body d-flex flex-column">
                                         <div className="form-floating mb-3">
                                             <input onBlur={handlePasswordResetEmail} type="email" className="form-control" id="floatingInput" placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInput">Email or Phone</label>
                                         </div>
                                         <div className='mt-4'>
-                                            <button onClick={handlePasswordResetEmailSent} type="button" className="button-reset-password btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                            <button onClick={handlePasswordResetEmailSent} type="button" className="button-reset-password btn btn-primary" data-bs-target="#exampleModalToggle2"
+                                                    data-bs-toggle="modal">
                                                 Reset password
                                             </button>
                                             <button type="button" className="button-back-reset-password btn btn-outline-secondary mt-3" data-bs-dismiss="modal">
@@ -170,11 +177,11 @@ const SignIn = () => {
 
                         <button type="submit" className="btn btn-primary button">Sign in</button>
                         <p className='horizontal-line'><span> or </span></p>
-                        <button type="button" className="btn btn-primary button-google" onClick={handleGoogleSignIn}>
+                        <button type="button" className="btn btn-primary button-google" onClick={GoogleSignIn}>
                             <img src="https://img.icons8.com/fluency/48/000000/google-logo.png"/><span>Sign in with Google</span>
                         </button>
                     </form>
-                    <p className='join-now-text'>New to ProNetwork? <a href=''>Join now</a></p>
+                    <p className='join-now-text'>New to ProNetwork? <Link to='/sign-up'>Join now</Link></p>
                 </section>
 
                 {/*----------------footer-----------------*/}
