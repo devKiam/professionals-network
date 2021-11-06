@@ -7,6 +7,7 @@ import Feed from "./Components/Feed/Feed";
 import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import NodePractice from "./Components/NodePractice/NodePractice";
+import Jobs from "./Components/Jobs/Jobs";
 
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
                         <Route path='/feed'>
                             <Header/>
                             <Feed/>
+                        </Route>
+                        <Route path='/jobs'>
+                            <Header/>
+                            <Jobs/>
                         </Route>
                         <Route path='/node-practice'>
                             <NodePractice/>

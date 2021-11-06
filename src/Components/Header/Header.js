@@ -47,7 +47,9 @@ const Header = () => {
                     <div className="icons-menu collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="icons-menu-list navbar-nav ms-auto mb-2 mb-lg-0">
                             <li>
-                                <i className="fas fa-home fa-lg"/>
+                                <Link to='/feed' style={{textDecoration: "none", margin: 0}}>
+                                    <i className="fas fa-home fa-lg"/>
+                                </Link>
                                 <p className='icon-title'>Home</p>
                             </li>
                             <li>
@@ -55,7 +57,9 @@ const Header = () => {
                                 <p className='icon-title'>My Network</p>
                             </li>
                             <li>
-                                <i className="fas fa-briefcase fa-lg"/>
+                                <Link to='/jobs' style={{textDecoration: "none", margin: 0}}>
+                                    <i className="fas fa-briefcase fa-lg"/>
+                                </Link>
                                 <p className='icon-title'>Jobs</p>
                             </li>
                             <li>

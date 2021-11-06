@@ -7,7 +7,7 @@ const NodePractice = () => {
 
     // fetching data from server
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('http://localhost:5000/jobs')
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -17,18 +17,20 @@ const NodePractice = () => {
 
     // sending data to server ----------------------------------------------------------------
     const nameRef = useRef()
-    const emailRef = useRef()
+    const positionRef = useRef()
+    const locationRef = useRef()
 
     function handleAddData(event) {
         event.preventDefault()
 
         const newData = {
             name: nameRef.current.value,
-            email: emailRef.current.value
+            position: positionRef.current.value,
+            location: locationRef.current.value
         }
 
         //  send data to server
-        fetch('http://localhost:5000/users', {
+        fetch('http://localhost:5000/jobs', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,11 +68,15 @@ const NodePractice = () => {
     // deleting ----------------------------
 
     return (
-        <div>
-            <h1>This is Node Practice</h1>
+        <div className='App'>
+            <h1>Admin</h1>
             <form onSubmit={handleAddData}>
-                <input type='text' ref={nameRef}/>
-                <input type='text' ref={emailRef}/>
+                <input type='text' ref={nameRef} placeholder='Company name'/>
+                <br/>
+                <input type='text' ref={positionRef} placeholder='Job position'/>
+                <br/>
+                <input type='text' ref={locationRef} placeholder='Location'/>
+                <br/>
                 <button type='submit'>Add</button>
             </form>
             {
