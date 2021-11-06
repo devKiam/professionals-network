@@ -31,10 +31,10 @@ const FooterPrimary = () => {
                         Brand Policy
                     </li>
                     <li>
-                        Guest Controls
+                        Guest Controls Here
                     </li>
                     <li>
-                        Community Guidelines
+                        Community Guidelines Here
                     </li>
                 </ul>
             </footer>
