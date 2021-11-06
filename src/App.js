@@ -6,6 +6,7 @@ import Header from "./Components/Header/Header";
 import Feed from "./Components/Feed/Feed";
 import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import NodePractice from "./Components/NodePractice/NodePractice";
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
                         <Route path='/feed'>
                             <Header/>
                             <Feed/>
+                        </Route>
+                        <Route path='/node-practice'>
+                            <NodePractice/>
                         </Route>
                     </Switch>
                 </BrowserRouter>
