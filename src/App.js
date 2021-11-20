@@ -8,6 +8,9 @@ import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import NodePractice from "./Components/NodePractice/NodePractice";
 import Jobs from "./Components/Jobs/Jobs";
+import Profile from "./Components/Profile/Profile";
+import FooterPrimary from "./Components/FooterPrimary/FooterPrimary";
+import React from "react";
 
 
 function App() {
@@ -33,6 +36,10 @@ function App() {
                         <Route path='/jobs'>
                             <Header/>
                             <Jobs/>
+                        </Route>
+                        <Route path='/profile'>
+                            <Header/>
+                            <Profile/>
                         </Route>
                         <Route path='/node-practice'>
                             <NodePractice/>

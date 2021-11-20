@@ -17,16 +17,25 @@ const JobsMiddle = () => {
     }, [])
 
     function handleSearch(event) {
-        const search = event.target.value
-        const newData = data.filter(x => x.name.toLowerCase().includes(search.toLowerCase()))
-        setSearchData(newData)
+        const searchInput = event.target.value
+        const searchResultBasedOnCompanies = data.filter(x => x.name.toLowerCase().includes(searchInput.toLowerCase()))
+        const searchResultBasedOnTitle = data.filter(x => x.position.toLowerCase().includes(searchInput.toLowerCase()))
+        const searchResultBasedOnLocation = data.filter(x => x.location.toLowerCase().includes(searchInput.toLowerCase()))
+
+        const s = new Set()
+        searchResultBasedOnCompanies.forEach(x => s.add(x))
+        searchResultBasedOnTitle.forEach(x => s.add(x))
+        searchResultBasedOnLocation.forEach(x => s.add(x))
+
+        let result = Array.from(s)
+        setSearchData(result)
     }
 
     return (
         <fragment>
             <section className='jobs-section'>
                 <div className='d-flex align-items-center justify-content-center flex-column'>
-                    <input className="search-bar form-control ms-0 mb-4" type="search" placeholder="Search" aria-label="Search" onBlur={handleSearch}/>
+                    <input className="search-bar form-control ms-0 mb-4" type="search" placeholder="Search" aria-label="Search" onChange={handleSearch}/>
                     <h1 className='h1-recommend'>Recommended for you</h1>
                     <p className='subtitle-recommend'>Based on your profile and search history.</p>
                 </div>

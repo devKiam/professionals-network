@@ -1,8 +1,10 @@
-import React, {Fragment, useEffect, useRef, useState} from 'react';
+import React, {Fragment, useContext, useEffect, useRef, useState} from 'react';
 import './ScaffoldLayoutMiddle.css'
+import {AuthContext} from "../../context/AuthProvider";
 
 const ScaffoldLayoutMiddle = () => {
 
+    const {user} = useContext(AuthContext)
     const [data, setData] = useState([])
 
     // fetching data from server
@@ -48,7 +50,7 @@ const ScaffoldLayoutMiddle = () => {
 
             <section className='post'>
                 <div className='d-flex align-items-center'>
-                    <img className='person-img-post-section' src='https://media-exp1.licdn.com/dms/image/C5603AQHeoCR29cRfVQ/profile-displayphoto-shrink_100_100/0/1629619845079?e=1640822400&v=beta&t=Ra05mJYbGdvKCUu9JJImqPDhAii6sg0v3saRzZX7Alk'/>
+                    <img className='person-img-post-section' src={user.photoURL}/>
 
                     {/*Button Triggered Modal*/}
                     <button type="button" className="start-a-post btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -69,8 +71,8 @@ const ScaffoldLayoutMiddle = () => {
                                 </div>
                                 <div className="modal-body ">
                                     <div className='d-flex align-items-center'>
-                                        <img className='person-img-post-section' src='https://media-exp1.licdn.com/dms/image/C5603AQHeoCR29cRfVQ/profile-displayphoto-shrink_100_100/0/1629619845079?e=1640822400&v=beta&t=Ra05mJYbGdvKCUu9JJImqPDhAii6sg0v3saRzZX7Alk'/>
-                                        <h6 className='user-name-modal'>Md. Nuho Ul Alam (Kiam)</h6>
+                                        <img className='person-img-post-section' src={user.photoURL}/>
+                                        <h6 className='user-name-modal'>{user.displayName}</h6>
                                     </div>
                                     <div>
                                         <textarea ref={postRef} className='post-input' placeholder='What do you want to talk about?'/>

@@ -7,6 +7,7 @@ import {AuthContext} from "../../context/AuthProvider";
 const Header = () => {
 
     const {user, LogOut} = useContext(AuthContext)
+    console.log(user)
 
     
     // route to sign-in if logout
@@ -47,28 +48,34 @@ const Header = () => {
                     <div className="icons-menu collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="icons-menu-list navbar-nav ms-auto mb-2 mb-lg-0">
                             <li>
-                                <Link to='/feed' style={{textDecoration: "none", margin: 0}}>
+                                <Link className='link-items' to='/feed'>
                                     <i className="fas fa-home fa-lg"/>
+                                    <p className='icon-title'>Home</p>
                                 </Link>
-                                <p className='icon-title'>Home</p>
                             </li>
                             <li>
-                                <i className="fas fa-user-friends fa-lg"/>
-                                <p className='icon-title'>My Network</p>
+                                <Link className='link-items'>
+                                    <i className="fas fa-user-friends fa-lg"/>
+                                    <p className='icon-title'>My Network</p>
+                                </Link>
                             </li>
                             <li>
-                                <Link to='/jobs' style={{textDecoration: "none", margin: 0}}>
+                                <Link className='link-items' to='/jobs'>
                                     <i className="fas fa-briefcase fa-lg"/>
+                                    <p className='icon-title'>Jobs</p>
                                 </Link>
-                                <p className='icon-title'>Jobs</p>
                             </li>
                             <li>
-                                <i className="fas fa-comment-dots fa-lg"/>
-                                <p className='icon-title'>Messaging</p>
+                                <Link className='link-items'>
+                                    <i className="fas fa-comment-dots fa-lg"/>
+                                    <p className='icon-title'>Messaging</p>
+                                </Link>
                             </li>
                             <li>
-                                <i className="fas fa-bell fa-lg"/>
-                                <p className='icon-title'>Notifications</p>
+                                <Link className='link-items'>
+                                    <i className="fas fa-bell fa-lg"/>
+                                    <p className='icon-title'>Notifications</p>
+                                </Link>
                             </li>
                             <li>
                                 <div className="dropdown d-flex flex-column justify-content-center align-items-center">
@@ -76,7 +83,7 @@ const Header = () => {
                                     <p className='icon-title'>Me</p>
 
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a className="dropdown-item" href="#">Action</a></li>
+                                        <li><Link className="dropdown-item" to="/profile">View Profile</Link></li>
                                         <li><a className="dropdown-item" href="#">Another action</a></li>
                                         <li><Link className="dropdown-item" to='/sign-in' onClick={LogOut}>Logout</Link></li>
                                     </ul>

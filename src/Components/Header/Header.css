@@ -30,10 +30,18 @@
     min-width: 80px;
     min-height: 52px;
 }
-
+.link-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(0,0,0,0.6);
+}
 .icon-title {
     font-size: 12px;
     margin-top: 2px;
     margin-bottom: 0;
     color: grey;
 }
+
