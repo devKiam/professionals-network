@@ -7,7 +7,7 @@ import {AuthContext} from "../../context/AuthProvider";
 const Header = () => {
 
     const {user, LogOut} = useContext(AuthContext)
-    console.log(user)
+    // console.log(user)
 
     
     // route to sign-in if logout
@@ -54,7 +54,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link className='link-items'>
+                                <Link className='link-items' to=''>
                                     <i className="fas fa-user-friends fa-lg"/>
                                     <p className='icon-title'>My Network</p>
                                 </Link>
@@ -66,13 +66,13 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link className='link-items'>
+                                <Link className='link-items' to=''>
                                     <i className="fas fa-comment-dots fa-lg"/>
                                     <p className='icon-title'>Messaging</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link className='link-items'>
+                                <Link className='link-items' to=''>
                                     <i className="fas fa-bell fa-lg"/>
                                     <p className='icon-title'>Notifications</p>
                                 </Link>

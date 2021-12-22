@@ -2,19 +2,26 @@ import React, {Fragment, useContext} from 'react';
 import './ProfileLeft.css'
 import {AuthContext} from "../../context/AuthProvider";
 
+
 const ProfileLeft = () => {
 
     const {user} = useContext(AuthContext)
+    console.log(user)
 
 
     return (
         <Fragment>
-            <section className='profile-top-bio'>
-                <img className='user-profile-image' src={user.photoURL}/>
-                <h1 className='user-profile-name'>{user.displayName}</h1>
-                <div className='d-flex flex-column'>
-                    <span className='user-profile-bio'>Computer Science Student and Programmer</span>
-                    <span className='user-profile-location'>Bangladesh</span>
+            <section className='profile-top-bio d-flex flex-column'>
+                <div className='profile-background-thumbnail' style={{borderTopLeftRadius : '8px', borderTopRightRadius : '8px'}}>
+                    <img className='user-background-image' style={{borderTopLeftRadius : '8px', borderTopRightRadius : '8px'}} src='user_background_image.svg'/>
+                </div>
+                <div className='below-profile-background-thumbnail'>
+                    <img className='user-profile-image' src={user.photoURL}/>
+                    <h1 className='user-profile-name'>{user.displayName}</h1>
+                    <div className='d-flex flex-column'>
+                        <span className='user-profile-bio'>Computer Science Student and Programmer</span>
+                        <span className='user-profile-location'>Bangladesh</span>
+                    </div>
                 </div>
             </section>
             <section className='profile-about'>
