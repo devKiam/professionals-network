@@ -66,13 +66,13 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link className='link-items' to=''>
+                                <Link className='link-items' to='/messenger'>
                                     <i className="fas fa-comment-dots fa-lg"/>
                                     <p className='icon-title'>Messaging</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link className='link-items' to=''>
+                                <Link className='link-items' to='/notification'>
                                     <i className="fas fa-bell fa-lg"/>
                                     <p className='icon-title'>Notifications</p>
                                 </Link>

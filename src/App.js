@@ -13,6 +13,8 @@ import FooterPrimary from "./Components/FooterPrimary/FooterPrimary";
 import React from "react";
 import MyNetwork from './Components/Mynetwork/MyNetwork';
 import Jobdetails from './Components/Jobs/Jobdetails';
+import Messenger from './Components/Messenger/Messenger';
+import Notification from './Components/Notification/Notification';
 
 
 function App() {
@@ -42,6 +44,14 @@ function App() {
                         <Route path='/jobdetails'>
                             <Header/>
                             <Jobdetails/>
+                        </Route>
+                        <Route path='/messenger'>
+                            <Header/>
+                            <Messenger/>
+                        </Route>
+                        <Route path='/notification'>
+                            <Header/>
+                            <Notification/>
                         </Route>
                         <Route path='/jobs'>
                             <Header/>
