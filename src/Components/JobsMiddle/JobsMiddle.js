@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import './JobsMiddle.css'
 
 const JobsMiddle = () => {
@@ -49,7 +50,9 @@ const JobsMiddle = () => {
                                 <span className='company-name'>{j.name}</span>
                                 <span className='job-location'>{j.location}</span>
                             </div>
+                            <div><Link to='/jobdetails' className='btn btn-outline-info p-1'>More</Link></div>
                             <hr/>
+                            
                         </div>
                     )
                 }

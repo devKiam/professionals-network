@@ -12,13 +12,14 @@ const Jobs = () => {
                     <div className='testing'>
                         <div className='row'>
                             <div className='col-3'>
-                                {/*<ScaffoldLayoutLeft/>*/}
+                                <ScaffoldLayoutLeft/>
                             </div>
                             <div className='col-6'>
                                 <JobsMiddle/>
                             </div>
+                            
                             <div className='col-3'>
-                                {/*<ScaffoldLayoutRight/>*/}
+                                <ScaffoldLayoutRight/>
                             </div>
                         </div>
                     </div>
