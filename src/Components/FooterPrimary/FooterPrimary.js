@@ -4,7 +4,7 @@ import './FooterPrimary.css'
 const FooterPrimary = () => {
     return (
         <Fragment>
-            <footer className='footer-primary'>
+            <footer className='footer-primary py-5'>
                 <ul className='footer-primary-ul d-flex justify-content-center'>
                     <li>
                         © 2021

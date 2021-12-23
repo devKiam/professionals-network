@@ -22,7 +22,7 @@ const useFirebase = () => {
     // sending userdata :: Save User Data Mongodb
     const saveUser = (email, displayName, photoURL, uid, method) => {
         const user = { email, displayName, photoURL, uid, role:'user'};
-        console.log(user)
+        console.log(user);
         const url=`http://localhost:5000/usersInfo`;
         fetch(url, {
             method: method,
@@ -94,7 +94,9 @@ const useFirebase = () => {
         user,
         error,
         GoogleSignIn,
-        LogOut
+        LogOut,
+        isLoading,
+        setIsLoading
     }
 }
 

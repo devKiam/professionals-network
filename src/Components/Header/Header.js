@@ -54,7 +54,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link className='link-items' to=''>
+                                <Link className='link-items' to='/mynetworks'>
                                     <i className="fas fa-user-friends fa-lg"/>
                                     <p className='icon-title'>My Network</p>
                                 </Link>

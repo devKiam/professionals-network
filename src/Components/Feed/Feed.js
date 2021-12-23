@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Feed.css'
 import ScaffoldLayoutLeft from "../ScaffoldLayoutLeft/ScaffoldLayoutLeft";
 import ScaffoldLayoutMiddle from "../ScaffoldLayoutMiddle/ScaffoldLayoutMiddle";
 import ScaffoldLayoutRight from "../ScaffoldLayoutRight/ScaffoldLayoutRight";
+import { AuthContext } from '../../context/AuthProvider';
 
 const Feed = () => {
+    const {isLoading} = useContext(AuthContext)
+
+    if(isLoading){
+        return<div class="spinner-border text-primary" role="status"> 
+                  <span class="visually-hidden">Loading...</span> 
+              </div>     
+    }
     return (
         <div className='feed-body'>
             <div className='container'>

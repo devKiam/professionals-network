@@ -11,6 +11,7 @@ import Jobs from "./Components/Jobs/Jobs";
 import Profile from "./Components/Profile/Profile";
 import FooterPrimary from "./Components/FooterPrimary/FooterPrimary";
 import React from "react";
+import MyNetwork from './Components/Mynetwork/MyNetwork';
 
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
                         <Route path='/feed'>
                             <Header/>
                             <Feed/>
+                        </Route>
+                        <Route path='/mynetworks'>
+                            <Header/>
+                            <MyNetwork/>
                         </Route>
                         <Route path='/jobs'>
                             <Header/>

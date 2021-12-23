@@ -5,19 +5,24 @@ import {AuthContext} from "../../context/AuthProvider";
 
 const PrivateRoute = ({children, ...rest}) => {
 
-    const {user} = useContext(AuthContext)
+    const {user,isLoading} = useContext(AuthContext)
 
-
+    if(isLoading){
+        return<div class="spinner-border text-primary" role="status"> 
+                  <span class="visually-hidden">Loading...</span> 
+              </div>     
+              }
     return (
         <Route
             {...rest}
-            render={({ location }) => user.email ? (
+            render={({ location }) => 
+            user.email ? (
                     children
                 ) : (
                     <Redirect
                         to={{
                             pathname: "/sign-in",
-                            state: { from: location }
+                            state: { from:location }
                         }}
                     />
                 )
