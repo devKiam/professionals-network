@@ -5,8 +5,9 @@ import '../ScaffoldLayoutMiddle/ScaffoldLayoutMiddle.css'
 const MyNetwork = (props) => {
 
     const {user} = useContext(AuthContext)
-    const [data, setData] = useState([])
-    const [searchData, setSearchData] = useState([])
+    const [data, setData] = useState([]);
+    const [searchData, setSearchData] = useState([]);
+    const [connectRequest,setConnectRequest] = useState(false);
 
     // fetching data from server
     useEffect(() => {
@@ -41,9 +42,13 @@ const MyNetwork = (props) => {
                                         <span className='title-follow'>{x.displayName}</span>
                                         <span className='bio-follow'>CS Student | Programmer</span>
                                         {
-                                            <button type="button"
+                                            connectRequest==='true'?
+                                            <button type="button"onClick={setConnectRequest(false)}
                                                     className="follow-button-right-section btn btn-outline-secondary d-flex align-items-center justify-content-center">
                                                 <span>+ Connect</span>
+                                            </button>:<button type="button" onClick={setConnectRequest(true)}
+                                                    className="follow-button-right-section btn btn-outline-secondary d-flex align-items-center justify-content-center">
+                                                <span>Request</span>
                                             </button>
                                         }
                                     </div>
