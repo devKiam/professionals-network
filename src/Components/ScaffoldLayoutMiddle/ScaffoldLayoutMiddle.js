@@ -38,7 +38,8 @@ const ScaffoldLayoutMiddle = () => {
             .then(res => res.json())
             .then(d => {
                 if (d.acknowledged === true) {
-                    alert('data inserted')
+                    // alert('data inserted')
+                    window.location.reload()
                 }
             })
     }
@@ -115,9 +116,9 @@ const ScaffoldLayoutMiddle = () => {
                             <body className='body-timeline-card'>
                             <p className='body-text-timeline'>
                                 {x.post}
-                                <a style={{textDecoration:'none'}} href='http://myumi.ch/WwErZ'>myumi.ch/WwErZ</a>
+                                {/*<a style={{textDecoration:'none'}} href='http://myumi.ch/WwErZ'>myumi.ch/WwErZ</a>*/}
                             </p>
-                            <img className='body-img-timeline' src='https://media-exp1.licdn.com/dms/image/sync/C5622AQHmYsUk8riaYw/feedshare-shrink_800/0/1635258605323?e=1638403200&v=beta&t=6I1jn9TzAPcpczx99rxweLpabBbt_C8YCR1P1TKXg6E'/>
+                            {/*<img className='body-img-timeline' src='https://media-exp1.licdn.com/dms/image/sync/C5622AQHmYsUk8riaYw/feedshare-shrink_800/0/1635258605323?e=1638403200&v=beta&t=6I1jn9TzAPcpczx99rxweLpabBbt_C8YCR1P1TKXg6E'/>*/}
                             </body>
                         </div>
                     )

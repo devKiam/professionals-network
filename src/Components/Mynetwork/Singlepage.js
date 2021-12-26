@@ -14,11 +14,11 @@ const Singlepage =({x})=> {
                         a == true ?
                             <button type="button" onClick={()=>{setA(false)}}
                                     className="follow-button-right-section btn btn-outline-secondary d-flex align-items-center justify-content-center">
-                                <span>+ Connect</span>
+                                <span>Requested</span>
                             </button> :
                             <button type="button" onClick={()=>{setA(true)}}
                                     className="follow-button-right-section btn btn-outline-secondary d-flex align-items-center justify-content-center">
-                                <span>Requested</span>
+                                <span>+ Connect</span>
                             </button>
                     }
                 </div>

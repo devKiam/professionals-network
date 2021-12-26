@@ -4,16 +4,19 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider';
 import '../ScaffoldLayoutMiddle/ScaffoldLayoutMiddle.css';
+import {Link} from "react-router-dom";
 const Jobdetails = () => {
     const {user} = useContext(AuthContext)
     const [data, setData] = useState([])
+    const [a, setA] = useState(false)
 
     // fetching data from server
+    // fetching data from server
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('http://localhost:5000/jobs')
             .then(res => res.json())
             .then(data => {
-                setData(data.reverse())
+                setData(data)
             })
     }, [])
     return (
@@ -24,17 +27,27 @@ const Jobdetails = () => {
                         <div className='row'>
                             
                             <div className='col'>
-                            {
-                                data.map(x =>
-                                    <div className='timeline-card'>
-                                        <p className='body-text-timeline'>
-                                            
-                                        </p>
-                                        <img alt="" className='body-img-timeline' src='https://media-exp1.licdn.com/dms/image/sync/C5622AQHmYsUk8riaYw/feedshare-shrink_800/0/1635258605323?e=1638403200&v=beta&t=6I1jn9TzAPcpczx99rxweLpabBbt_C8YCR1P1TKXg6E'/>
-                                        
+                                    <div className='single-job'>
+                                        <h1 className='job-position text-center'>Frontend Developer</h1>
+                                            <div className='d-flex flex-column'>
+                                                <span className='company-name'>Google</span>
+                                                <span className='job-location'>California, US</span>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores assumenda delectus ea enim eum fugit hic ipsa neque officiis recusandae similique, tempora vel. Earum eius laboriosam nisi unde voluptate.</p>
+                                                {
+                                                    a == true ?
+                                                        <button type="button" onClick={()=>{setA(false)}}
+                                                                className="follow-button-right-section w-50 btn btn-outline-secondary d-flex align-items-center justify-content-center align-items-center ">
+                                                            <span>Applied</span>
+                                                        </button> :
+                                                        <button  type="button" onClick={()=>{setA(true)}}
+                                                                className="follow-button-right-section btn btn-outline-secondary d-flex w-50 align-items-center justify-content-center align-items-center">
+                                                            <span>Apply</span>
+                                                        </button>
+                                                }
+
+                                            </div>
+                                        <hr/>
                                     </div>
-                                )
-                            }
                             </div>
                             
                         </div>

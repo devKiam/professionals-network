@@ -2,6 +2,7 @@ import React, {Fragment, useContext, useEffect, useState} from 'react';
 import './ScaffoldLayoutRight.css';
 import {Button} from "@mui/material";
 import {AuthContext} from "../../context/AuthProvider";
+import Singlepage from "../Mynetwork/Singlepage";
 
 const ScaffoldLayoutRight = () => {
 
@@ -19,7 +20,7 @@ const ScaffoldLayoutRight = () => {
             })
     }, [])
 
-
+    const [a, setA] = useState(false)
     return (
         <Fragment>
             <section className='right-section'>
@@ -27,21 +28,32 @@ const ScaffoldLayoutRight = () => {
                     <h2 className='title-right-section'>Add to your feed</h2>
                 </header>
                 <div className='body-right-section'>
-
                     {
-                        usersInfo.map(x =>
-                            <div className='d-flex align-items-start mb-3'>
-                                <img className='img-right-section' src={x.photoURL}/>
-                                <div className='data-follow d-flex flex-column '>
-                                    <span className='title-follow'>{x.displayName}</span>
-                                    <span className='bio-follow'>CS Student | Programmer</span>
-                                    <button type="button" className="follow-button-right-section btn btn-outline-secondary d-flex align-items-center justify-content-center">
-                                        <span>+ Follow</span>
-                                    </button>
-                                </div>
-                            </div>
+                        usersInfo.map(x =><Singlepage
+                                key={x._id}
+                                x={x}
+                            >
+                            </Singlepage>
                         )
                     }
+
+                    {/*{*/}
+                    {/*    usersInfo.map(x =>*/}
+                    {/*        <div className='d-flex align-items-start mb-3'>*/}
+                    {/*            <img className='img-right-section' src={x.photoURL}/>*/}
+                    {/*            <div className='data-follow d-flex flex-column '>*/}
+                    {/*                <span className='title-follow'>{x.displayName}</span>*/}
+                    {/*                <span className='bio-follow'>CS Student | Programmer</span>*/}
+                    {/*                {*/}
+                    {/*                    */}
+                    {/*                }*/}
+                    {/*                <button type="button" className="follow-button-right-section btn btn-outline-secondary d-flex align-items-center justify-content-center">*/}
+                    {/*                    <span>+ Follow</span>*/}
+                    {/*                </button>*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*    )*/}
+                    {/*}*/}
 
                 </div>
             </section>

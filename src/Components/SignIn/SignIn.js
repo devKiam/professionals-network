@@ -185,7 +185,7 @@ const SignIn = () => {
                 </section>
 
                 {/*----------------footer-----------------*/}
-                {/* <FooterPrimary/> */}
+                 <FooterPrimary/>
                 {/*----------------footer-----------------*/}
             </div>
         </Fragment>
